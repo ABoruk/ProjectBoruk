@@ -50,7 +50,7 @@ public class Student {
         System.out.println("Новая группа: " + group);
     }
 
-        // Статический метод для фильтрации студентов по среднему баллу
+
         public Student[] getStudents(Student[] students, int mark) {
 
             int count = 0;
@@ -59,11 +59,11 @@ public class Student {
                     count++;
                 }
             }
-            // Создаём результирующий массив нужного размера
+
             Student[] result = new Student[count];
             int a = 0;
 
-            // Заполняем массив подходящими студентами
+
             for (Student student : students) {
                 if (student.avg_point > mark) {
                     result[a++] = student;
@@ -76,4 +76,3 @@ return result;
 
 
 
-//Инициализацию студента в классе main выполнять через конструктор с параметрами. Также определите конструктор без параметров.
