@@ -1,6 +1,6 @@
 package homework.Task8;
 
-import static homework.Task8.Task2.insert;
+
 
 public class Main {
     public static void main(String[] args) {
