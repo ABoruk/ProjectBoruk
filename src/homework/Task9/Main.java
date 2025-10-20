@@ -2,10 +2,11 @@ package homework.Task9;
 
 public class Main {
     public static void main(String[] args) {
-        Dog dog1 = new Dog("Белый", 2, "Мясо", "Лабрадор", "Тузик", 15);
+
+        Dog dog1 = new Dog("Серый", 5, "Мясо", "Лабрадор", "Тузик", 15);
         Dog dog2 = new Dog("Черный", 3, "Трава", "Дворняга", "Мухтар", 5);
         Dog dog3 = new Dog("Рыжий", 4, "Все", "Шпиц", "Барни", 10);
-        Bird bird1 = new Bird("Серый", 5, "Семечки", "Синичка", 50);
+        Bird bird1 = new Bird("Серый", 3, "Семечки", "Синичка", 50);
         Bird bird2 = new Bird("Черный", 6, "Кора", "Дятел", 20);
         Bird bird3 = new Bird("Красный", 7, "Снег", "Снегирь", 60);
         bird1.sound();
@@ -28,9 +29,9 @@ public class Main {
 
         Animal[] allAnimals = zoo.getAnimals();
 
-        for (Animal animal1 : allAnimals) {
-            animal1.sound();
-            animal1.play();
+        for (Animal animal2 : allAnimals) {
+            animal2.sound();
+            animal2.play();
             System.out.println();
         }
         System.out.println(dog1.equals(dog2));

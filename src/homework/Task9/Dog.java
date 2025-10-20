@@ -1,5 +1,7 @@
 package homework.Task9;
 
+import java.util.Objects;
+
 //В классе собака определить имя, порода, средний вес.
 //В классе Собака реализовать методы: лаять, кусать, бегать, играть, прыгать.
 // При этом, в консоли должны выводится имя собаки вместе с описанием действия (пример. Рекс прыгает).
@@ -44,7 +46,6 @@ public class Dog extends Animal {
         System.out.println(name + " прыгает");
     }
 
-    // Переопределить методы, которые есть в родительском классе животное (издание звуков, животное играет)  в классах Собака и Птица.
     public void play() {
         System.out.println(name + " играет");
     }
@@ -56,22 +57,26 @@ public class Dog extends Animal {
     }
 
     public boolean equals(Object obj) {
+
         if (!(obj instanceof Dog)) {
+            return false;
+        }
+        if (!super.equals(obj)) {
             return false;
         }
         Dog dog1 = (Dog) obj;
 
-        if (name.equals(dog1.getName()) && breed.equals(dog1.getBreed()) && avg_weight == getAvg_weight()) {
+        if (name.equals(dog1.getName()) && breed.equals(dog1.getBreed()) && avg_weight == dog1.avg_weight) {
             return true;
         } else {
             return false;
         }
+
     }
 
     public int hashCode() {
-        int result = (int) (name.hashCode() + breed.hashCode() + avg_weight * 2);
+        int result ;
+        result = super.hashCode()+3 * (int) (name.hashCode() + breed.hashCode() + avg_weight * 2);
         return result;
     }
-
-
 }

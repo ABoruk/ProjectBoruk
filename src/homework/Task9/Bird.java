@@ -34,9 +34,12 @@ public class Bird extends Animal {
         if (!(obj instanceof Bird)) {
             return false;
         }
+        if (!super.equals(obj)) {
+            return false;
+        }
         Bird bird1 = (Bird) obj;
 
-        if (family.equals(bird1.getFamily()) && height == getHeight()) {
+        if (family.equals(bird1.getFamily()) && height == bird1.height) {
             return true;
         } else {
             return false;
@@ -54,7 +57,8 @@ public class Bird extends Animal {
 
     @Override
     public int hashCode() {
-        int result = family.hashCode() + height;
+        int result;
+        result=super.hashCode()+3* family.hashCode() + height;
         return result;
     }
 }

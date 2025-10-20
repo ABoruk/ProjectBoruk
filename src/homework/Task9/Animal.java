@@ -1,11 +1,7 @@
 package homework.Task9;
 
-//Создать классы: Животное, Собака, Птица. Поля в классе животное: окрас, максимальная продолжительность жизни, тип еды которой питаются (мясо, насекомые, растения).
-// Определить методы в классе животное: (издание звуков, животное играет)
-//Определить поля в классе Птица: семейство, максимальная высота полёта. В классе птица методы-петь, клевать, высиживать птенцов.
-//При этом, в консоли должны выводиться поля семейства птиц с соответствующим поведением (пример: Воробей поёт).
-// Использовать наследование, где суперкласс-Животное.
-// Переопределить методы, которые есть в родительском классе животное (издание звуков, животное играет)  в классах Собака и Птица.
+import java.util.Objects;
+
 public class Animal {
     private String color;
     private int age;
@@ -40,7 +36,22 @@ public class Animal {
         return food;
     }
 
+@Override
+public boolean equals(Object obj) {
+    if (!(obj instanceof Animal)) return false;
+    Animal animal = (Animal) obj;
+            if (color.equals(animal.getColor()) && age==animal.age &&food.equals((animal.getFood()))) {
+            return true;
+        } else {
+            return false;
+        }
+}
 
+    @Override
+    public int hashCode() {
+        int result = color.hashCode() + food.hashCode() + age * 2;
+            return  result;
+    }
 }
 
 
