@@ -1,11 +1,11 @@
 package homework.Task14;
 
 public class Patient {
-    int id;
-    String name;
-    String surname;
-    String diagnoz;
-    int age;
+    private int id;
+    private String name;
+    private String surname;
+    private String diagnoz;
+    private int age;
     private Sex sex;
 
     public Patient(int id, String name, String surname, String diagnoz, int age, Sex sex) {

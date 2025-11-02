@@ -59,7 +59,7 @@ public class Room {
             patients.add(patient);
 
         } else {
-            System.out.println("Пациент с диагнозом: " + patient.diagnoz + " не может быть добавлен");
+            System.out.println("Пациент с диагнозом: " + patient.getDiagnoz() + " не может быть добавлен");
         }
     }
 
